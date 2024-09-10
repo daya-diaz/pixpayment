@@ -24,4 +24,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     lineHeight: 22,
   },
+  pressed: {
+    backgroundColor: '#ffd9ed',
+  },
 });

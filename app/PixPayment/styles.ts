@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
   },
   paymentFormTitle: {
     fontSize: 16,
-    color: '#505050',
+    color: '#242F66',
     fontWeight: '500'
   },
   paymentFormSpan: {
@@ -77,5 +77,14 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     width: 56,
     height: 56
+  },
+  qeaContainer: {
+    
+  },
+  qeaTitle: {
+    fontSize: 18,
+    fontWeight: "500",
+    color: '#242F66',
+    marginBottom: 16
   }
 });
