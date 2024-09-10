@@ -78,9 +78,6 @@ export const styles = StyleSheet.create({
     width: 56,
     height: 56
   },
-  qeaContainer: {
-    
-  },
   qeaTitle: {
     fontSize: 18,
     fontWeight: "500",

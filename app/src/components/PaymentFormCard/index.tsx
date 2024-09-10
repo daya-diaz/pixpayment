@@ -10,12 +10,13 @@ type PaymentFormCardProps = TouchableOpacityProps & {
   iconTopName?: string,
   onIconTopPress?: () => void,
   text: string,
+  onPress?: () => void;
 };
 
 export default function PaymentFormCard(props: PaymentFormCardProps) {
-  const { IconTop, iconTopName, text, onIconTopPress, ...rest } = props;
+  const { IconTop, iconTopName, text, onIconTopPress, onPress, ...rest } = props;
   return(
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.content}>
         {
           IconTop && iconTopName && (

@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, TouchableOpacityProps, View } from "react-native";
+import { ActivityIndicator, Text, TouchableOpacity, TouchableOpacityProps, View } from "react-native";
 import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { styles } from "./styles";
 
@@ -10,22 +10,44 @@ type ButtonProps = TouchableOpacityProps & {
   iconRightName?: string,
   onIconRightPress?: () => void,
   text: string,
+  variant?: "primary" | "secondary" | "outline",
+  isLoading: boolean,
 };
-
 export default function Button(props: ButtonProps) {
-  const { IconRight, iconRightName, text, onIconRightPress, ...rest } = props;
-  return(
-    <TouchableOpacity style={styles.linkButton}>
-       <View style={styles.container}>
-       <Text style={styles.text}>{text}</Text>
+  const { IconRight, iconRightName, isLoading, text, onIconRightPress, variant = "primary", ...rest } = props;
+
+  // Seleciona o estilo com base na variante
+  const buttonStyle = [
+    styles.linkButton,
+    variant === "primary" && styles.primary,
+    variant === "secondary" && styles.secondary,
+    variant === "outline" && styles.outline,
+  ];
+
+  // Define a cor do texto com base na variante
+  const textStyle = [
+    styles.text,
+    variant === "primary" && { color: '#fff' },
+    variant === "secondary" && { color: '#505050' },
+    variant === "outline" && { color: '#E0087A' },
+  ];
+
+  return (
+    <TouchableOpacity style={buttonStyle} {...rest}>
+      <View style={styles.container}>
         {
-          IconRight && iconRightName && (
-            <TouchableOpacity onPress={onIconRightPress}>
-              <IconRight name={iconRightName as any} size={20} style={styles.icon} />
-            </TouchableOpacity>
+          isLoading ? (
+            <ActivityIndicator size="small" color="#fff" />
+          ) : (
+            <Text style={textStyle}>{text}</Text>
           )
         }
-       </View>
+        {IconRight && iconRightName && (
+          <TouchableOpacity onPress={onIconRightPress}>
+            <IconRight name={iconRightName as any} size={20} style={styles.icon} />
+          </TouchableOpacity>
+        )}
+      </View>
     </TouchableOpacity>
-  )
+  );
 }

@@ -33,9 +33,9 @@ export default function PixPaymentScreen() {
           </View>
           <View style={styles.selectPaymentForm}>
             <PaymentFormCard text='Ler QR Code Pix' IconTop={FontAwesome} iconTopName='qrcode' />
-            <PaymentFormCard text='Pix Copia e Cola' IconTop={FontAwesome} iconTopName='copy' />
+            <PaymentFormCard text='Pix Copia e Cola' onPress={() => router.push('/PixPayment/CopyAndPastPage')} IconTop={FontAwesome} iconTopName='copy' />
           </View>
-          <View style={styles.qeaContainer}>
+          <View>
             <Text style={styles.qeaTitle}>Perguntas frequentes:</Text>
             {
               accordionData.map((item: AccordionItemData) => (
