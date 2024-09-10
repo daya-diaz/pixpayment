@@ -33,8 +33,8 @@ export default function CopyAndPastPage() {
       
       const isSuccess = Math.random() > 0.5; //50% de chances de sucesso
       
-      router.push(isSuccess ? '/' : 'PixPayment');
-    }, 3000) //delay de 3s
+      router.push(isSuccess ? '/' : '/PixPayment/Resume');
+    }, 3000) // delay de 3s
   }
 
   const handleDeleteCode = () => {

@@ -11,7 +11,7 @@ type ButtonProps = TouchableOpacityProps & {
   onIconRightPress?: () => void,
   text: string,
   variant?: "primary" | "secondary" | "outline",
-  isLoading: boolean,
+  isLoading?: boolean,
 };
 export default function Button(props: ButtonProps) {
   const { IconRight, iconRightName, isLoading, text, onIconRightPress, variant = "primary", ...rest } = props;
