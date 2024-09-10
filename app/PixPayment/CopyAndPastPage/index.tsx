@@ -20,7 +20,7 @@ export default function CopyAndPastPage() {
   const handlePayment = () => {
     // verifica se o cod pix é valido
     if(!validatePixCode(pixCode)) {
-      setErrorMessage('Código Pix inválido.')
+      setErrorMessage('Esse não é um código Pix válido')
       return;
     }
     // Se for válido, mostra o loading e simula o pagamento
@@ -35,7 +35,10 @@ export default function CopyAndPastPage() {
       
       router.push(isSuccess ? '/' : 'PixPayment');
     }, 3000) //delay de 3s
+  }
 
+  const handleDeleteCode = () => {
+    setPixCode('');
   }
 
   return (
@@ -56,7 +59,7 @@ export default function CopyAndPastPage() {
         </View>
         <View style={styles.buttonContainer}>
           <Button variant="primary" text="Próximo" onPress={handlePayment} isLoading={isLoading}/>
-          <Button variant="secondary" text="Apagar código" isLoading={isLoading}/>
+          <Button variant="secondary" text="Apagar código" onPress={handleDeleteCode} isLoading={isLoading} />
         </View>
       </View>
     </View>

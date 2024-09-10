@@ -33,7 +33,6 @@ export const styles = StyleSheet.create({
   },
   buttonContainer: {
     height: 130,
-    // backgroundColor: 'green',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -53,9 +52,10 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },  
   error: {
-    color: 'red',
-    marginBottom: 10,
-    textAlign: 'center',
+    color: '#E03131',
+    fontSize: 12,
+    marginTop: -12,
+    textAlign: 'left',
   },
 
 })
