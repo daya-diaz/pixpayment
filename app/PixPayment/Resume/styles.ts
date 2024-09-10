@@ -53,7 +53,6 @@ export const styles = StyleSheet.create({
     color: '#767676',
     textTransform: 'uppercase',
   },
-  resumeContainer: {},
   separator: {
     width: '100%', 
     height: 1, 

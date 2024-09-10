@@ -14,8 +14,8 @@ export default function Resume() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      router.push('/');
-    }, 2000)
+      router.push('/PixPayment/Receipt');
+    }, 5000)
   }
 
   const handleCancelTransaction = () => {
@@ -30,7 +30,7 @@ export default function Resume() {
         onIconLeftPress={() => router.push('/PixPayment/CopyAndPastPage')}
       />
       <View style={styles.content}>
-        <View style={styles.resumeContainer}>
+        <View>
           <View style={styles.partnerContainer}>
             <Image source={PartnerIcon} />
             <View style={styles.partner}>
