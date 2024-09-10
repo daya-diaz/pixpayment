@@ -6,16 +6,31 @@ export const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     backgroundColor: 'white',
-    paddingHorizontal: 16,
   },
   header: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 136,
-    paddingHorizontal: 16,
-    backgroundColor: '#222E62'
+    // position: 'relative',
+    // top: 0,
+    // left: 0,
+    // right: 0,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 30,
+    height: 160,
+    backgroundColor: '#242F66',
+    zIndex: 1,
+  },
+  headerTitle: {
+    fontSize: 24,
+    color: '#fff',
+    fontWeight: "500"
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 16,
+    paddingTop: 90,
+    paddingHorizontal: 16  
   },
   inputContainer: {
     marginBottom: 20,
@@ -31,4 +46,36 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     fontSize: 18,
   },
+  textContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 6
+  },
+  paymentFormTitle: {
+    fontSize: 16,
+    color: '#505050',
+    fontWeight: '500'
+  },
+  paymentFormSpan: {
+    fontSize: 16,
+    color: '#505050',
+  },
+  selectPaymentForm: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 16
+  },
+  paymentFormSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 24
+  },
+  navigationButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+    width: 56,
+    height: 56
+  }
 });

@@ -19,12 +19,12 @@ export default function Button(props: ButtonProps) {
        <View style={styles.container}>
        <Text style={styles.text}>{text}</Text>
         {
-            IconRight && iconRightName && (
-              <TouchableOpacity onPress={onIconRightPress}>
-                <IconRight name={iconRightName as any} size={20} style={styles.icon} />
-              </TouchableOpacity>
-            )
-          }
+          IconRight && iconRightName && (
+            <TouchableOpacity onPress={onIconRightPress}>
+              <IconRight name={iconRightName as any} size={20} style={styles.icon} />
+            </TouchableOpacity>
+          )
+        }
        </View>
     </TouchableOpacity>
   )
