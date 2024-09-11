@@ -75,9 +75,11 @@ export const styles = StyleSheet.create({
   },
   separator: {
     width: '100%', 
-    height: 1, 
-    backgroundColor: '#c8c8c8',
-    marginVertical: 12,
+    height: 1,
+    borderWidth: 0.8,
+    borderStyle: 'dashed',
+    borderColor: '#c8c8c8',
+    marginVertical: 8,
   },
   infosContainer: {
     display: 'flex',

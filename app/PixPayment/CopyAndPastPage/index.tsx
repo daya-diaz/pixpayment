@@ -11,6 +11,8 @@ export default function CopyAndPastPage() {
   const [pixCode, setPixCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
+
   //validação do cod pix
   const validatePixCode = (code: string) => {
     const alphanumericRegex = /^[a-zA-Z0-9]{32}$/;
@@ -33,12 +35,13 @@ export default function CopyAndPastPage() {
       
       const isSuccess = Math.random() > 0.5; //50% de chances de sucesso
       
-      router.push(isSuccess ? '/' : '/PixPayment/Resume');
+      isSuccess ? router.push('/PixPayment/Resume') : setErrorMessage('Esse não é um código Pix válido');
     }, 3000) // delay de 3s
   }
 
   const handleDeleteCode = () => {
     setPixCode('');
+    setErrorMessage('');
   }
 
   return (
@@ -54,12 +57,23 @@ export default function CopyAndPastPage() {
           <Text style={styles.label}>
             Copie e cole o código do QR code Pix
           </Text>
-          <TextInput value={pixCode} onChangeText={(e) => setPixCode(e)} style={styles.input} placeholder="Cole o código aqui"/>
+          <TextInput 
+            value={pixCode}
+            onChangeText={(e) => setPixCode(e)} 
+            style={[
+              styles.input, 
+              isFocused ? styles.inputFocused : null,
+              errorMessage ? styles.inputError : null
+            ]}
+            placeholder="Cole o código aqui"
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+          />
           {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
         </View>
         <View style={styles.buttonContainer}>
-          <Button variant="primary" text="Próximo" onPress={handlePayment} isLoading={isLoading}/>
-          <Button variant="secondary" text="Apagar código" onPress={handleDeleteCode} isLoading={isLoading} />
+          <Button disabled={!pixCode} variant="primary" text="Próximo" onPress={handlePayment} isLoading={isLoading}/>
+          <Button disabled={!pixCode} variant="secondary" text="Apagar código" onPress={handleDeleteCode} isLoading={isLoading} />
         </View>
       </View>
     </View>

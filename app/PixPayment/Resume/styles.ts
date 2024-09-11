@@ -55,9 +55,11 @@ export const styles = StyleSheet.create({
   },
   separator: {
     width: '100%', 
-    height: 1, 
-    backgroundColor: '#c8c8c8',
-    marginVertical: 24
+    height: 1,
+    borderWidth: 0.8,
+    borderStyle: 'dashed',
+    borderColor: '#c8c8c8',
+    marginVertical: 12,
   },
   resumeTitle: {
     color: '#505050',
@@ -69,7 +71,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     gap: 8,
-
+    paddingBottom: 8
   },
   resumeInfosContainer: {
     display: 'flex',

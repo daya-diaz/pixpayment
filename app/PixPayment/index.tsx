@@ -13,9 +13,11 @@ import { accordionData, AccordionItemData } from '../src/data/accordionData';
 export default function PixPaymentScreen() {
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const handlePress = (index: number) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
+  
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>

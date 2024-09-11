@@ -24,7 +24,21 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     fontSize: 16,
     color: '#767676',
-    padding: 16
+    padding: 16,
+  },
+  inputError: {
+    borderColor: '#E03131', 
+  },
+  error: {
+    color: '#E03131',
+    fontSize: 12,
+    marginTop: -12,
+    textAlign: 'left',
+  },
+  inputFocused: {
+    borderColor: '#E0087A',
+    backgroundColor: '#f9f9f9',
+    borderWidth: 2
   },
   inputArea: {
     display: 'flex',
@@ -51,11 +65,6 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
   },  
-  error: {
-    color: '#E03131',
-    fontSize: 12,
-    marginTop: -12,
-    textAlign: 'left',
-  },
+  
 
 })

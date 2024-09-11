@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     paddingVertical: 20,
     borderRadius: 8,
-    backgroundColor: '#E0087A',
+    backgroundColor: '#E0087A', // Cor padrão para o botão
   },
   primary: {
     backgroundColor: '#E0087A',
@@ -18,6 +18,15 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderColor: '#E0087A',
     borderWidth: 2,
+  },
+  disabled: {
+    backgroundColor: '#f0ecec', // Cor para o botão desativado
+  },
+  disabledText: {
+    color: '#808080', // Cor do texto para o botão desativado
+  },
+  disabledIcon: {
+    color: '#808080', // Cor do ícone para o botão desativado
   },
   icon: {
     width: '100%',
