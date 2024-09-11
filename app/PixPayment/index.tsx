@@ -34,7 +34,7 @@ export default function PixPaymentScreen() {
             <Text style={styles.paymentFormSpan}>Pague o valor integral ou parte das suas compras com pontos Livelo usando Pix via QR Code ou Pix Copia e Cola.</Text>
           </View>
           <View style={styles.selectPaymentForm}>
-            <PaymentFormCard text='Ler QR Code Pix' IconTop={FontAwesome} iconTopName='qrcode' />
+            <PaymentFormCard text='Ler QR Code Pix' onPress={() => router.push('/PixPayment/QRCodeScanner')} IconTop={FontAwesome} iconTopName='qrcode'  />
             <PaymentFormCard text='Pix Copia e Cola' onPress={() => router.push('/PixPayment/CopyAndPastPage')} IconTop={FontAwesome} iconTopName='copy' />
           </View>
           <View>
